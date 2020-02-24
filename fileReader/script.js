@@ -1,0 +1,28 @@
+
+const heros =
+        [
+            ["ANA0011","Rick","ANASTASIADIS","27/06/2002","12L"],
+            ["CRO0025","Vincent","CROWE","13/12/2002","12H"],
+            ["FEL0005","Andre","FELICIANI","27/02/2002","12I"],
+            ["GUZ0001","Oli","GUZOWSKI","30/09/2002","12H"],
+            ["HAP0002","Joseph","HAPP","17/02/2003","12B"],
+            ["LOU0025","Sam","LOUIS-BROWN","21/11/2002","12G"],
+            ["MEA0018","Zac","MEANEY","10/07/2002","12H"],
+            ["PAP0046","Matthew","PAPOULIAS","11/01/2003","12H"],
+            ["ROD0007","Nicolas","RODDA","20/08/2002","12E"],
+            ["TAN0047","Michael","TANG","01/05/2001","12F"],
+            ["TSE0007","Michael","TSETSOS","21/08/2002","12M"],
+            ["VER0026","Max","VERHOEF","29/07/2002","12H"]
+
+        ]
+function downloadCSV() {
+    var content = 'ImportIdentifier,PreferredName,LastName,Dob,FormGroup\r\n';
+    for(let hero of heros){
+      content += hero.join() + '\r\n';
+      };
+    var link = document.createElement('a');
+        link.href = 'data:text/csv;charset=utf-8,' + encodeURI(content);
+        link.target = '_blank';//download in a new window
+        link.download = 'class_list.csv';
+        link.click();
+}
